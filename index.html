@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Grid</title>
+<!--
+    This template can be used for photo app with grid view that will open detail view, for applications like Photo App or Instagram app.
+-->  
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0;" />
+    
+    <link rel="stylesheet" type="text/css" href="appframework/af.ui.css" />
+    <link rel="stylesheet" type="text/css" href="appframework/icons.css" />
+    <script type="text/javascript" charset="utf-8" src="appframework/appframework.ui.min.js"></script>
+
+<!-- Required if packaging to native app using Intel XDK -->    
+    <script src="intelxdk.js"></script>
+    <script src="xhr.js"></script>
+    <script>    
+        function onDeviceReady(){ 
+            $.ui.launch();
+            intel.xdk.device.hideSplashScreen();
+        }
+        document.addEventListener("intel.xdk.device.ready", onDeviceReady, false);
+    </script>
+<!-- end Intel XDK code -->
+    
+    <script>   
+        $.ui.autoLaunch = false; 
+        $.ui.backButtonText = " ";
+                
+        $(document).ready(function(){
+            $.ui.launch();
+        });
+    </script>
+    <style>
+/* CSS responsive square grid */        
+.grid-photo {margin:3px -7px;} 
+.grid-photo:after {content:'';display:block;clear:both;}        
+.grid-photo li {position: relative; display:block; float:left; width: 10%; padding-bottom: 10%;}
+.grid-photo .grid-photo-box {position: absolute;left: 3px;right: 3px;top: 3px;bottom: 3px; background-color: rgba(128,128,128,0.2);} 
+.grid-photo img {width:100%;height:100%}
+@media only screen and (max-width : 1024px) {
+    .grid-photo li {width: 12.5%; padding-bottom: 12.5%;}        
+}        
+@media only screen and (max-width : 768px) {
+    .grid-photo li {width: 16.6%; padding-bottom: 16.6%;}        
+}        
+@media only screen and (max-width : 480px) {
+    .grid-photo li {width: 25%; padding-bottom: 25%;}        
+}
+@media only screen and (max-width : 320px) {
+    .grid-photo li {width: 33.3%; padding-bottom: 33.3%;}        
+}   
+    </style>    
+</head>
+<body> 
+<div id="afui">
+    <div id="content" style="">
+        
+    <!--Grid View Page-->
+        <div class="panel" title="Title" id="gridview" selected="true">
+            <header>
+                <h1>Nagpur, India</h1>
+            </header>
+            <div class="grid-photo">
+                <li><div class="grid-photo-box"><a href="#item1"><img src="img/History.png" /></a></div></li>
+					<div class="panel" title="Famous Place" id="item1" style="text-indent: 1em;">
+						<center> <h1><u>Deekshabhoomi</u><h1><br>
+						<img  src="img/desskshabhoomi.png" alt="desskshabhoomi" style="width:220px;height:220px"> </center>
+						<p> &nbsp; &nbsp; &nbsp; Deekshabhoomi is a sacred monument of Buddhism in Nagpur. Deekshabhoomi is a place where Dr.Baba Saheb Ambedkar converted into Buddhism and so did his thousands of followers. Deekshabhoomi is the place where not only BUDDHIST but all the people who believe in himself and the way of BUDDHA come together to pray for peace. </p>
+						<br><br>
+						<center> <h1><u>Zero Milestone</u><h1><br>
+						<img  src="img/zero.png" alt="zero" style="width:220px;height:220px"> </center>
+						<p>&nbsp; &nbsp; &nbsp; Nagpur is the largest city in the state of Maharashtra and is also very famous for "Zero Milestone". It is situated in the heart of the NAGPUR city and off course heart of INDIA. "Zero Mile stone of India" is located from where the distance of all the cities of India is calculated.</p>
+					</div>
+					
+			
+			
+			
+			
+                <li><div class="grid-photo-box"><a href="#item2"><img src="img/guide.png" /></a></div></li>
+					<div class="panel" title="Wildlife sanctuary " id="item2">
+						<center> <h1><u>Nagzira</u><h1><br>
+						<img  src="img/wild.png" alt="wild" style="width:300px;height:220px"> </center>
+						<p> &nbsp; &nbsp; &nbsp; This small wildlife sanctuary covers an area of 152 sq km in the north east corner of Maharashtra in the Bhandara district 122km away from Nagpur. Nestled within the Vidarbha mountain range, it is often referred to as the "green oasis" of the region. Its rocky and undulating terrain is covered with thick Teak forests that support healthy populations of some of India's most endangered floral and fauna biodiversity.
+						<br><br>&nbsp; &nbsp; &nbsp; It is open from 1st October to 15th June, closing for the monsoons from 16th June to 30th September. The best time to visit the sanctuary is in the summers from March to June, when tiger sightings are at their peak. Jeeps are available on hire, and one can even take in their own vehicle, but a guide is a necessity. The Pitezhari gate is the main point from where permits to enter the sanctuary can be taken. The park is open for morning and evening safaris from 6:30am - 10:30am and 3:30pm - 6:30pm.<br><br>
+						</p>
+					</div>
+					
+					
+					
+					
+					
+					
+					
+                <li><div class="grid-photo-box"><a href="#item3"><img src="img/tour.png" /></a></div></li>
+					<div class="panel" title="Tourist spots" id="item3">
+						<center> <h1><u>Sitabuldi Fort</u><h1><br>
+						<img  src="img/Sitabuldi.png" alt="Sitabuldi" style="width:220px;height:220px"> </center>
+						<p> &nbsp; &nbsp; &nbsp; This historical landmark of the city is nestled on the Twin Mountains. The fort was built by a British Officer in the year 1857; since then it has become an interesting destination for the tourists visiting Nagpur. </p>
+						<br><br>
+						<center> <h1><u>Futala Lake</u><h1><br>
+						<img  src="img/futala.png" alt="futala" style="width:220px;height:220px"> </center>
+						<p>&nbsp; &nbsp; &nbsp; Futala lake, built by Raje Bhosle dating back to centuries, is known for its charming atmosphere and coloured fountains. The pleasant atmosphere makes it a beautiful picnic spot.</p>
+						<center> <h1><u>Ganesh Mandir Tekdi</u><h1><br>
+						<img  src="img/ganesh.png" alt="ganesh" style="width:220px;height:220px"> </center>
+						<p> &nbsp; &nbsp; &nbsp; Ganesh Tekdi Mandir has a very strong following in the city and is believed to attract 5,000 visitors daily. The monthly amount collected through donations provided by the devotees is believed to be up to 12-15 Lakhs.The temple welcomes devotees uptill 12:00 PM. The waving of a lamp "Aarti" is done 4 times a day and a sweet called "Modaka" is distributed as a divine gift. The Idol of The Lord is said to be self-existent. It is said that the idol was not as big, it was quite small but it grew with the passage of time. It is decorated with gold and silver ornaments as well as flowers. On special occasions like "Ganesh Chaturthi" and "Ekadashi", the devotees get a chance to witness the idol wearing a crown.</p>
+						<br><br>
+						<center> <h1><u>Seminary Hill</u><h1><br>
+						<img  src="img/semi.png" alt="semi" style="width:220px;height:220px"> </center>
+						<p>&nbsp; &nbsp; &nbsp; The main attraction of the Seminary Hill in Nagpur is the natural view that it offers. The Seminary Hill is actually a hillock. There's a huge park and garden located at this place.</p>
+						<br><br>
+						<center> <h1><u>All Saints' Cathedral</u><h1><br>
+						<img  src="img/saint.png" alt="sanit" style="width:220px;height:220px"> </center>
+						<p>&nbsp; &nbsp; &nbsp;All Saints' Cathedral is the seat of the Bishop, and is presently affiliated to The church of North India (Estd. 27th November, 1970) - which now handles all the churches of British Raj and has been working ceaselessly to mould these churches into the Indo-christian culture. </p>
+						<br>
+					</div>
+	
+					
+					
+					
+					
+					
+					
+					
+                <li><div class="grid-photo-box"><a href="#item5"><img src="img/flight.png" /></a></div></li>
+					<div class="panel" title="Sonegaon Airport" id="item5">
+					<br><center> <img  src="img/air.png" alt="air" style="width:300px;height:200px"> </center>
+						<p>&nbsp; &nbsp; &nbsp; Dr. Babasaheb Ambedkar International is also known as Sonegaon Airport, is a public domestic and international airport serving the city of Nagpur, Maharashtra, India. It is one of the 18 Airports in the Maharashtra. It was named for Bhimrao aka Dr. "Babasaheb" Ambedkar, the famous Indian economist, jurist and politician . Strategically located and in a prosperous region, Nagpur Airport figures to play prominently in the spectacular growth of air travel in India. The airport connects Nagpur to Indias main aviation hubs of Mumbai and Delhi, as well as the international destinations Sharjah, Dubai and Doha. The airport has witnessed a slight decrease in air traffic due to increase in fuel prices in recent days.</p><br>
+					</div>
+					
+					
+					
+					
+					
+					
+				<li><div class="grid-photo-box"><a href="#item4"><img src="img/train.png" /></a></div></li>
+					<div class="panel" title="Nagpur Railways" id="item4">
+					<br><center> <img  src="img/train1.png" alt="train1" style="width:300px;height:200px"> </center>
+						<p>&nbsp; &nbsp; &nbsp;The railways at Nagpur were established a long time back well before the independence of India, as Nagpur used to be an important city of India even in those days. The year 1867 marks the beginning of the Nagpur railways. In the year 1881, the city of Nagpur was linked up with another important city of India, that is, Kolkata, via the railways of the state of Chhattisgarh. The railway station of Nagpur was previously housed towards the east of the place where the current station has been constructed. The present-day railway station of Nagpur was also put up in the pre-independence days. The year of its establishment is 1924.<br><br>
+					<center> <img  src="img/train2.png" alt="train2" style="width:300px;height:220px"> </center>
+						<p> &nbsp; &nbsp; &nbsp; This is a patented and unique Railway Crossing near Nagpur station called diamond crossing. It is the place where India crosses from North to South ( Delhi - Chennai) and  East to West (Howrah - Mumbai).
+						<br><br>	
+						</p>
+					</div>	
+					
+					
+					
+					
+					
+					
+                <li><div class="grid-photo-box"><a href="#item6"><img src="img/court.png" /></a></div></li>
+					<div class="panel" title="High Court" id="item6">
+					<br><center> <img  src="img/court1.png" alt="court1" style="width:300px;height:200px"> </center>
+						<p>&nbsp; &nbsp; &nbsp; The High Court of Judicature at Nagpur continued to be housed in this building till there organisation of States in 1956. With effect from 1-11-1956, eight Marathi speaking districts of Vidarbha formed part of the greater bi-lingual State of Bombay which came into existence. Remaining fourteen Hindi speaking districts of the former State of Madhya Pradesh became part of the newly constituted State of Madhya Pradesh with the capital at Bhopal. The High Court of Madhya Pradesh was treated as successor of the former High Court at Nagpur.</p><br>
+					</div>
+					
+					
+					
+					
+					
+					
+					
+                <li><div class="grid-photo-box"><a href="#item7"><img src="img/gov.png" /></a></div></li>
+					<div class="panel" title="Government" id="item7">
+						<br><p><center><u>Few Government Sites in Nagpur District</U> <center><br>
+						
+						<table BORDER="1">
+						<tr>
+							<td>S.No</td>
+							<td>Name of the department</td>
+							<td>Website URL</td>
+						</tr>
+						<tr>
+							<td>1.</td>
+							<td>Collector Office</td>
+							<td>http://www.nagpur.nic.in</td>
+						</tr>
+  <tr>
+    <td>2.</td>
+    <td>PDS Alert</td>
+    <td>http://nagpurcollector.org</td>
+  </tr>
+  <tr>
+    <td>3.</td>
+    <td>Commissioner Office</td>
+    <td>http://nagpur.nic.in/divisionalcommissioner/htmlscripts/index.asp</td>
+  </tr>
+  <tr>
+    <td>4.</td>
+    <td>Police Department</td>
+    <td>http://nagpurpolice.info/</td>
+  </tr>
+  <tr>
+    <td>5.</td>
+    <td>Nagpur Municipal Corporation</td>
+    <td>http://nmc.org.in</td>
+  </tr>
+  <tr>
+    <td>6.</td>
+    <td>Nagpur Improvement Trust</td>
+    <td>http://nitnagpur.org</td>
+  </tr>
+  <tr>
+    <td>7.</td>
+    <td>Passport Office</td>
+    <td>http://passport.gov.in/nagpit.html</td>
+  </tr>
+  <tr>
+    <td>8.</td>
+    <td>BSNL Office</td>
+    <td>http://nagpur.bsnl.co.in/teldir</td>
+  </tr>
+  <tr>
+    <td>9.</td>
+    <td>MSMB Development Institute</td>
+    <td>http://sisinagpur.nic.in/</font></a></td>
+  </tr>
+  <tr>
+    <td>10.</font></td>
+    <td>Central Institute Of cotton research</font></td>
+    <td>http://cicr.org.in/</td>
+  </tr>
+  <tr>
+    <td>11.</td>
+    <td>Western coal Fields Limited</td>
+    <td>http://westerncoal.nic.in/</td>
+  </tr>
+  <tr>
+    <td>12.</td>
+    <td>Nagpur University</td>
+    <td>http://nagpuruniversity.org/</td>
+  </tr>
+  <tr>
+    <td>13.</td>
+    <td>Central Excise</td>
+    <td>http://cenexcisenagpur.nic.in</td>
+  </tr>
+  <tr>
+    <td>14.</td>
+    <td>National Environment Engineering Research Institute</font></td>
+    <td>http://neeri.res.in</td>
+  </tr>
+    <center>
+  <tr>
+    <td>15.</td>
+    <td>Maharashtra animal and fishery sciences university</td>
+</center>
+    <td>http://mafsu.in</td>
+  </tr>
+    <center>
+  <tr>
+    <td>16.</td>
+    <td>Regional telecom training center Nagpur</td>
+</center>
+    <td>http://www.rttcnagpur.bsnl.co.in</td>
+  </tr>
+    <center>
+  <tr>
+    <td>17.</td>
+    <td>National power training institute Nagpur</td>
+    <td>http://nptinagpur.com</td>
+  </tr>
+  <tr>
+    <td>18.</td>
+    <td>National fire service institute Nagpur</td>
+    <td>http://nfscnagpur.nic.in</td>
+  </tr>
+  <tr>
+    <td>19.</td>
+    <td>Government medical college and hospital Nagpur</td>
+    <td>http://gmcnagpur.org.in/</td>
+  </tr>
+  <tr>
+    <td>20.</td>
+    <td>National Reserch center for citrus</td>
+    <td>http://nrccitrus.nic.in/</td>
+  </tr>
+  <tr>
+    <td>21.</td>
+    <td>Indian Bureau of mining</td>
+    <td>http://ibm.nic.in/</td>
+  </tr>
+  <tr>
+    <td>22.</td>
+    <td>Jawaharlal Nehru aluminum research development and design centre</td>
+    <td>http://www.jnarddc.gov.in</td>
+  </tr>
+  <tr>
+    <td>23.</td>
+    <td>Tribal development department</td>
+    <td>http://mahatribal.gov.in/</td>
+  </tr>
+  <tr>
+    <td>24.</td>
+    <td >Indian metrological Department</td>
+</center>
+    <td>http://imdnagpur.gov.in/</td>
+  </tr>
+    <center>
+  <tr>
+    <td>25.</font></td>
+    <td>RTO Office</font></td>
+    <td>http://www.transportindia.in/office.asp?state=16&amp;city=59</td>
+  </tr>
+</table>
+</center></p>
+					</div>
+					
+					
+					
+					
+					
+					
+					
+                <li><div class="grid-photo-box"><a href="#item8"><img src="img/edu.png" /></a></div></li>
+					<div class="panel" title="Education" id="item8">
+						<center> <h1><u>RSC-NGP</u><h1><br></center><p>&nbsp; &nbsp; &nbsp;The Raman Science Centre, Nagpur is an constituent unit of National Council of Science Museums,  Kolkata,  More Details: http://www.rscnagpur.gov.in/ <br> <br> <center> <img  src="img/ram.png" alt="ram" style="width:300px;height:220px"> </center>
+						<br><br><center> <h1><u>VNIT-NGP</u><h1><br></center><br>&nbsp; &nbsp; &nbsp;Visvesvaraya National Institute of Technology, Nagpur is one of the thirty National Institutes of Technology in the country. More Details:  http://www.vnit.ac.in/ <br><br> <center> <img  src="img/vnit.png" alt="vnit" style="width:300px;height:220px"> </center>
+						<br><br><center> <h1><u>Gov. Polytechnic-NGP</u><h1><br></center>&nbsp; &nbsp; &nbsp;The Government Polytechnic, Nagpur, was founded on 14th July, 1914. At its commencement the school had 16 student on roll. The institution has given birth to Engineering College presently known as V.N.I.T. Nagpur, as well as Govt. Medical College (GMC), Nagpur. More Details:  http://www.gpnagpur.ac.in/easy_cms_gpnagpur/ <br><br> <center> <img  src="img/poly.png" alt="vnit" style="width:300px;height:180px"> </center> <br><br> </p>
+					
+						</p>
+						
+					</div>
+					
+					
+					
+					
+					
+					
+					
+                <li><div class="grid-photo-box"><a href="#item10"><img src="img/Hospital.png" /></a></div></li>
+					<div class="panel" title="Hospital" id="item10">
+						<br><center><img  src="img/hosp.png" alt="hosp" style="width:220px;height:220px"> </center>
+						<p>&nbsp; &nbsp; &nbsp;Indira Gandhi Government Medical College & Hospital (IGGMCH) established in the year 1905 is located on Central Avenue, near the city railway station in Nagpur, run by the Government of Maharashtra. It is one of the two Government Medical Colleges in Nagpur city and one among the top ten Govt. Medical Colleges in Maharashtra. More Details:   http://www.iggmc.org/</p><br>
+					</div>
+					
+					
+					
+					
+					
+					
+					
+                <li><div class="grid-photo-box"><a href="#item9"><img src="img/post_box.png" /></a></div></li>
+					<div class="panel" title="Post office " id="item9">
+						<br><center><img  src="img/stamp.png" alt="stamp" style="width:300px;height:220px"> </center><br>
+						<center><p >
+							<U>Post office Addresses </u></center>
+						<table align="center">
+							<tr>
+								<td>*</td>
+								<td>Head Post office, Nagpur GPO Post office, Nagpur,  Maharashtra. Pincode-440001</td>
+							<tr>
+							<tr>
+								<td>*</td>
+								<td>Sadar Bazar Post office, Nagpur</td>
+							<tr>
+							<tr>
+								<td>*</td>
+								<td>Ravi Nagar, Post office,  Nagpur</td>
+							<tr>
+							<tr>
+								<td>*</td>
+								<td>Bureau Of Mines Post office, Nagpur</td>
+							<tr>
+							<tr>
+								<td>*</td>
+								<td>Coal Estate Post office, Nagpur</td>
+							<tr>
+							<tr>
+								<td>*</td>
+								<td>Kasturchand Park Post office, Nagpur</td>
+							<tr>
+							<tr>
+								<td>*</td>
+								<td>Mohan Nagar Post office, Nagpur</td>
+							<tr>
+						</table>
+						</p>
+					</div>
+					
+					
+					
+					
+					
+					
+					
+                <li><div class="grid-photo-box"><a href="#item11"><img src="img/shop.png" /></a></div></li>
+					 <div class="panel" title="Shopping Mall" id="item11">
+					 <br><center><img  src="img/shop1.png" alt="shop1" style="width:300px;height:220px"> </center>
+						<p><Center><u>Shopping Malls</u></center>
+						<table align="center">
+							<tr>
+								<td>*</td>
+								<td>Eternity Mall</td>
+							<tr>
+							<tr>
+								<td>*</td>
+								<td>Empress city Mall</td>
+							<tr>
+							<tr>
+								<td>*</td>
+								<td>Poonam Pride Mall</td>
+							<tr>
+							<tr>
+								<td>*</td>
+								<td>Big Bazaar</td>
+							<tr>
+							<tr>
+								<td>*</td>
+								<td>Store One Retail I Limited Mall</td>
+							<tr>
+						</table></p>
+					</div>
+					
+					
+					
+					
+					
+					
+					
+                <li><div class="grid-photo-box"><a href="#item12"><img src="img/food.png" /></a></div></li>
+					<div class="panel" title="Foods & Snacks" id="item12">
+						<br><center><img  src="img/hal.png" alt="hal" style="width:270px;height:220px"> </center>
+						<p>&nbsp; &nbsp; &nbsp;Haldiram's is a major Indian sweets and snacks manufacturer based in Nagpur, Maharashtra, India. The company has manufacturing plants in Nagpur, New Delhi, Kolkata, Bikaner. Haldiram's has its own retail chain stores and a range of restaurants in Nagpur and Delhi</p>
+						<br><center><img  src="img/centerp.png" alt="center" style="width:270px;height:220px"> </center>
+						<p>&nbsp; &nbsp; &nbsp;Hotel Airport Centre Point is A superior budget hotel with traditional hospitality & professionalism with touch of informality.
+A pioneering effort in the Orange City of Nagpur, the Hotel has established its creditability and reputation of being the highly service oriented property over the years.
+Along with the quality dining and entertainment the hotel has banqueting & conferencing facilities which are acclaimed in the city as the best value for money and a venerable venue for any occasion.
+Versatile facilities at the hotel are suitable for Wedding Ceremonies, Family get-togethers, Cocktail Dinners, Kitty Parties, Conferences & Seminars, Product Launches, Fashion Shows and other promotional events. Audio Visual Equipments, Lap Top Computers, LCD & OHP Projectors, Cordless Mikes and other supporting aids available</P>
+</div>
+					
+					
+					
+					
+					
+					
+					
+                <li><div class="grid-photo-box"><a href="#item13"><img src="img/stadium.png" /></a></div></li>
+					<div class="panel" title="VCA Stadium" id="item13">
+						<p> &nbsp; &nbsp; &nbsp;Vidarbha Cricket Association launched its new venue at Jamtha in early November 2008. Spread over 33 acres (130,000 m<sup>2</sup>), VCA Stadium is a swanky stadium with 45000 sitting capacity, world-class training and practice facilities for the players, along with score of other facilities than one can think of.  <br> <center><img  src="img/stadium1.png" alt="vca" style="width:300px;height:220px"> </center> <br> &nbsp; &nbsp; &nbsp; Located, 16 km on Nagpur - Hyderabad NH7, this piece of ultra modern sport facility, by far it is the best cricket stadium in India in terms of facilities.Spacious and well furnished pavilion with a decent sit out, mini gymnasium, exclusive lunch hall, medical room etc. completes the all round facility for the players.Special air-conditioned enclosure for the members at the Southern end is an added attraction. </p><br><br>
+					</div>
+					
+                <li><div class="grid-photo-box"><a href="#item14"><img src="img/about.png" /></a></div></li>
+					<div class="panel" title="Tiger Capital of India" id="item14">
+						<p>&nbsp; &nbsp; &nbsp; Nagpur is geographical center of India. It has a rare blending of antiquity and modernity. The second greenest city of India is popularly know as ORANGE CITY.<br> <br>
+						<table border="0" style="width:100%">
+							<tr>
+								<td>&nbsp;<b>State</b> </td>
+								<td>&nbsp;Maharashtra</td>		
+							</tr>
+							<tr>
+								<td>&nbsp;<b>Status</b></td>
+								<td>&nbsp;Second Capital</td>		
+							</tr>
+							<tr>
+								<td>&nbsp;<b>Latitude</b></td>
+								<td>&nbsp;21.09N</td>		
+							</tr>
+							<tr>
+								<td>&nbsp;<b>Longitude</b> </td>
+								<td>&nbsp;79.09E</td>		
+							</tr>
+							<tr>
+								<td>&nbsp;<b>Location</b></td>
+								<td>&nbsp;21&deg; 09 N 79&deg; 09 E</td>		
+							</tr>
+							<tr>
+								<td>&nbsp;<b>MSL</b></td>
+								<td>&nbsp;247.5-305 Mtrs</td>		
+							</tr>
+							<tr>
+								<td>&nbsp;<b>Area</b></td>
+								<td>&nbsp;220 Sq.Kms</td>		
+							</tr>
+							<tr>
+								<td>&nbsp;<b>Population</b></td>
+								<td>&nbsp;2,405,421(as per 2011) Densiy 11,000/km<sup>2</sup></td>		
+							</tr>
+							<tr>
+								<td>&nbsp;<b>Altitude</b></td>
+								<td>&nbsp;247.5-305 meters above sea level. (900-1000 ft)</td>		
+							</tr>
+							<tr>
+								<td>&nbsp;<b>Languages</b></td>
+								<td>&nbsp;Marathi - 50% (Official)</td>		
+							</tr>
+							<tr>
+								<td>&nbsp;(App. in %)</td>
+								<td>&nbsp;Hindi -  40%</td>		
+							</tr>
+							<tr>
+								<td>&nbsp;</td>
+								<td>&nbsp;Others - 10%</td>		
+							</tr>
+							<tr>
+								<td>&nbsp;<b>Rainfall</b></td>
+								<td>&nbsp;1,205 mm</td>		
+							</tr>
+							<tr>
+								<td>&nbsp;<b>Airport</b> </td>
+								<td>&nbsp;Sonegaon 8 Kms from zero milestone</td>		
+							</tr>
+							<tr>
+								<td>&nbsp;<b>Station</b></td>
+								<td>&nbsp;Nagpur Junction (Central Railway)</td>		
+							</tr>
+							<tr>
+								<td>&nbsp;<b>Telephone</b></td>
+								<td>&nbsp;91-712</td>		
+							</tr>
+							<tr>
+								<td>&nbsp;<b>Pincode</b></td>
+								<td>&nbsp;440 001 - 440 037</td>		
+							</tr>
+						</table>
+							
+					</div>
+					
+					
+					
+					
+					
+					
+					
+				<li><div class="grid-photo-box"><a href="#item15"><img src="img/movie_hall.png" /></a></div></li>			 
+					<div class="panel" title="Cinema" id="item15">
+					<br><center><img  src="img/cinema.png" alt="hosp" style="width:300px;height:220px"> </center>
+						<p>
+						<Center><u>Movie Theaters</u></center>
+						<table align="center">
+							<tr>
+								<td>*</td>
+								<td>Big Cinemas : Sangam</td>
+							<tr>
+							<tr>
+								<td>*</td>
+								<td>CineMax: Eternity Mall</td>
+							<tr>
+							<tr>
+								<td>*</td>
+								<td>INOX: Jaswant Tuli Mall, Kamptee Road</td>
+							<tr>
+							<tr>
+								<td>*</td>
+								<td>INOX: Poonam Mall</td>
+							<tr>
+							<tr>
+								<td>*</td>
+								<td>Jaishree Talkies: Nagpur</td>
+							<tr>
+							<tr>
+								<td>*</td>
+								<td>Kamla Cineplex: Nagpur</td>
+							<tr>
+							<tr>
+								<td>*</td>
+								<td>Liberty Cinema: Sadar</td>
+							<tr>
+							<tr>
+								<td>*</td>
+								<td>PVR: Empress City Mall, Nagpur</td>
+							<tr>
+							<tr>
+								<td>*</td>
+								<td>Smruti Cinema: Nagpur</td>
+							<tr>
+							<tr>
+								<td>*</td>
+								<td>Sudama Threatre: Dharampeth</td>
+							<tr>
+						</table>
+						</p>
+						<br>
+					</div>
+     
+    </div>
+</div>
+			
+</body>
+</html>    

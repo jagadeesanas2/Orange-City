@@ -1,0 +1,12 @@
+{
+  "name": "NAGPUR",
+  "description": "Orange City",
+  "launch_path": "/index.html",
+  "icons": {
+    "128": "/icon.png"
+  },
+  "developer": {
+    "name": "Jagadeesan A S"
+  },
+  "default_locale": "en"
+}
