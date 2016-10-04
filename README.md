@@ -12,4 +12,4 @@ The Firefox Marketplace is an open and non-proprietary online marketplace for we
 
 ## Screenshots
 
-For additional screenshots, see ![Screenshots.](https://marketplace.firefox.com/app/nagpur)
+For additional screenshots, see [here](https://marketplace.firefox.com/app/nagpur) 
